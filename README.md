@@ -55,4 +55,11 @@
 
         bin\kibana.bat
 4. Once started successfully, Kibana will start on default port 5601 and Kibana UI will be available at http://localhost:5601
-![Kibana Homepage](img\kibana_start.png)
+![Kibana Homepage](https://github.com/aman7797/spring-boot-ELK/blob/master/img/kibana_start.png)
+
+### Logstash
+
+1. Download Logstash from this [Logstash page](https://www.elastic.co/downloads/logstash) and unzip it
+2. Move file logstash.conf to ..\logstash\conf
+3. Now run below command in command prompt to start logstash
+	.\bin\logstash.bat -f .\config\logstash.conf
