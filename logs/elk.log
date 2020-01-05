@@ -1,0 +1,19 @@
+2020-01-05 22:10:11.644  INFO 11936 --- [main] com.kibana.elk.ElkApplication            : Starting ElkApplication on Aman-Lal with PID 11936 (C:\Users\Lalpuria_am\eclipse-workspace\spring-boot-ELK\target\classes started by Lalpuria_Am in C:\Users\Lalpuria_am\eclipse-workspace\spring-boot-ELK)
+2020-01-05 22:10:11.647  INFO 11936 --- [main] com.kibana.elk.ElkApplication            : No active profile set, falling back to default profiles: default
+2020-01-05 22:10:12.893  INFO 11936 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-01-05 22:10:12.914  INFO 11936 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-01-05 22:10:12.914  INFO 11936 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/9.0.12
+2020-01-05 22:10:12.924  INFO 11936 --- [main] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jre1.8.0_152\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:/Program Files/Java/jre1.8.0_152/bin/server;C:/Program Files/Java/jre1.8.0_152/bin;C:/Program Files/Java/jre1.8.0_152/lib/amd64;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Users\Lalpuria_am\AppData\Local\Microsoft\WindowsApps;C:\Users\Lalpuria_am\AppData\Local\Programs\Git\cmd;C:\Users\Lalpuria_am\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\Java\jdk1.8.0_152\bin;;C:\Windows\system32;;.]
+2020-01-05 22:10:13.029  INFO 11936 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-01-05 22:10:13.030  INFO 11936 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1346 ms
+2020-01-05 22:10:13.059  INFO 11936 --- [main] o.s.b.w.servlet.ServletRegistrationBean  : Servlet dispatcherServlet mapped to [/]
+2020-01-05 22:10:13.063  INFO 11936 --- [main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2020-01-05 22:10:13.064  INFO 11936 --- [main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2020-01-05 22:10:13.065  INFO 11936 --- [main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'formContentFilter' to: [/*]
+2020-01-05 22:10:13.065  INFO 11936 --- [main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2020-01-05 22:10:13.240  INFO 11936 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-01-05 22:10:13.427  INFO 11936 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-01-05 22:10:13.430  INFO 11936 --- [main] com.kibana.elk.ElkApplication            : Started ElkApplication in 2.109 seconds (JVM running for 2.659)
+2020-01-05 22:10:23.987  INFO 11936 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-01-05 22:10:23.988  INFO 11936 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-01-05 22:10:24.073  INFO 11936 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 84 ms
