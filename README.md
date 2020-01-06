@@ -64,3 +64,33 @@
 3. Now run below command in command prompt to start logstash
 		
 		.\bin\logstash.bat -f .\config\logstash.conf
+
+
+### Filebeat
+1. Download Filebeat from this [Filebeat page](https://www.elastic.co/downloads/beats/filebeat) and unzip it
+2. Open Filebeat.yml and change the *filebeat.inputs:*
+
+        filebeat.inputs:
+          - type: log
+          # Change to true to enable this input configuration.
+          enabled: true
+
+          # Paths that should be crawled and fetched. Glob based paths.
+          paths:
+            - C:\logstash\logs\*
+            #- c:\programdata\elasticsearch\logs\*
+3. Now run below command in command prompt to start Filebeat
+		
+		.filebeat.exe -c filebeat.yml
+
+## Start with ELK
+
+1. To create logs, run the java application and hit the endpoint
+
+        http://localhost:8080/elk
+        http://localhost:8080/exception
+2. Check the logs saved in the file
+3. Check the **index** in the Elasticsearch
+
+        http://localhost:9200/_cat/indices?v
+    ![Elasticsearch Index](https://github.com/aman7797/spring-boot-ELK/blob/master/img/Elasticsearch-index.png)
