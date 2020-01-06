@@ -62,4 +62,5 @@
 1. Download Logstash from this [Logstash page](https://www.elastic.co/downloads/logstash) and unzip it
 2. Move file logstash.conf to ..\logstash\conf
 3. Now run below command in command prompt to start logstash
-	.\bin\logstash.bat -f .\config\logstash.conf
+		
+		.\bin\logstash.bat -f .\config\logstash.conf
