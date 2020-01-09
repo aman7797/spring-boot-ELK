@@ -4,11 +4,13 @@
 1. Java
 
 ## ELK Configuration
+
 ![ELK Architecture](https://github.com/aman7797/spring-boot-ELK/blob/master/img/architecture.png)
+
 ### Elasticsearch
 
-1. Download Elasticsearch from this [ElasticSearch page](https://www.elastic.co/downloads/elasticsearch) and unzip it.
-2. To run the Elastic -Run the below command in the command propmt
+1. Download Elasticsearch from this [Elasticsearch page](https://www.elastic.co/downloads/elasticsearch) and unzip it.
+2. To run the Elastic, run the below command in the command prompt
 	
 		bin\elasticsearch.bat
 		
@@ -38,16 +40,18 @@
     }
     ```
     If someone face this issue while starting from command prompt.
-
-       ElasticsearchException: Failure running machine learning native code.
-
+    
+    ```swift
+    
+    ElasticsearchException: Failure running machine learning native code.
+    ```
     Just open the **elasticsearch\config\elasticsearch.yml** and add a line
       
         xpack.ml.enabled: false
 
 ### Filebeat
 1. Download Filebeat from this [Filebeat page](https://www.elastic.co/downloads/beats/filebeat) and unzip it
-2. Open Filebeat.yml and change the *filebeat.inputs:*
+2. Open Filebeat.yml and change the *filebeat.inputs:* and *output*
 
         filebeat.inputs:
           - type: log
@@ -63,7 +67,7 @@
             # The Logstash hosts
             hosts: ["localhost:5044"]
     
-    For reference you can refer to **filebeat.yml**
+    For reference you can refer to [**filebeat.yml**](https://github.com/aman7797/spring-boot-ELK/blob/master/filebeat.yml)
 
 3. Now run below command in command prompt to start Filebeat
 		
@@ -72,7 +76,7 @@
 ### Logstash
 
 1. Download Logstash from this [Logstash page](https://www.elastic.co/downloads/logstash) and unzip it
-2. Move file logstash.conf to ..\logstash\conf
+2. Move file [**logstash.conf**](https://github.com/aman7797/spring-boot-ELK/blob/master/logstash.conf) to ..\logstash\conf
 3. Now run below command in command prompt to start logstash
 		
 		.\bin\logstash.bat -f .\config\logstash.conf
@@ -102,5 +106,16 @@
         http://localhost:9200/_cat/indices?v
     ![Elasticsearch Index](https://github.com/aman7797/spring-boot-ELK/blob/master/img/Elasticsearch-index.png)
   
-4. Now you can check logs in Kibana
-  ![Kibana Logs](https://github.com/aman7797/spring-boot-ELK/blob/master/img/kibana_logs.png)
+4. Go to Kibana and **Create Index**
+  
+    ![Kibana Create Index](https://github.com/aman7797/spring-boot-ELK/blob/master/img/create_index.png)
+
+5. Type index name, click **Next Step** 
+  
+    ![Kibana Create Index Configuration](https://github.com/aman7797/spring-boot-ELK/blob/master/img/create_index_2.png)
+
+    Select the Timestamp and done with Configuration.
+
+6. Click on **Discover** now you can check logs in Kibana
+  
+    ![Kibana Logs](https://github.com/aman7797/spring-boot-ELK/blob/master/img/kibana_logs.png)
