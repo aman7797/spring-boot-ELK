@@ -26,7 +26,7 @@ class ELKController {
 
 	@RequestMapping(value = "/elk")
 	public String helloWorld() {
-		String response = "Welcome to Logger Filtter " + new Date();
+		String response = "Welcome to Logger Filtter - Aman Lalpuria " + new Date();
 		LOG.info(response);
 
 		return response;

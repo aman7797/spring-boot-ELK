@@ -4,7 +4,7 @@
 1. Java
 
 ## ELK Configuration
-
+![ELK Architecture](https://github.com/aman7797/spring-boot-ELK/blob/master/img/architecture.png)
 ### Elasticsearch
 
 1. Download Elasticsearch from this [ElasticSearch page](https://www.elastic.co/downloads/elasticsearch) and unzip it.
@@ -45,6 +45,38 @@
       
         xpack.ml.enabled: false
 
+### Filebeat
+1. Download Filebeat from this [Filebeat page](https://www.elastic.co/downloads/beats/filebeat) and unzip it
+2. Open Filebeat.yml and change the *filebeat.inputs:*
+
+        filebeat.inputs:
+          - type: log
+          # Change to true to enable this input configuration.
+          enabled: true
+
+          # Paths that should be crawled and fetched. 
+          paths:
+           - C:\Users\Lalpuria_am\eclipse-workspace\spring-boot-ELK\logs\*
+
+           #----------------------------- Logstash output --------------------------------
+            output.logstash:
+            # The Logstash hosts
+            hosts: ["localhost:5044"]
+    
+    For reference you can refer to **filebeat.yml**
+
+3. Now run below command in command prompt to start Filebeat
+		
+		.filebeat.exe -c filebeat.yml
+
+### Logstash
+
+1. Download Logstash from this [Logstash page](https://www.elastic.co/downloads/logstash) and unzip it
+2. Move file logstash.conf to ..\logstash\conf
+3. Now run below command in command prompt to start logstash
+		
+		.\bin\logstash.bat -f .\config\logstash.conf
+
 ### Kibana
 
 1. Download Kibana from this [Kibana page](https://www.elastic.co/downloads/kibana) and unzip it
@@ -57,31 +89,6 @@
 4. Once started successfully, Kibana will start on default port 5601 and Kibana UI will be available at http://localhost:5601
 ![Kibana Homepage](https://github.com/aman7797/spring-boot-ELK/blob/master/img/kibana_start.png)
 
-### Logstash
-
-1. Download Logstash from this [Logstash page](https://www.elastic.co/downloads/logstash) and unzip it
-2. Move file logstash.conf to ..\logstash\conf
-3. Now run below command in command prompt to start logstash
-		
-		.\bin\logstash.bat -f .\config\logstash.conf
-
-
-### Filebeat
-1. Download Filebeat from this [Filebeat page](https://www.elastic.co/downloads/beats/filebeat) and unzip it
-2. Open Filebeat.yml and change the *filebeat.inputs:*
-
-        filebeat.inputs:
-          - type: log
-          # Change to true to enable this input configuration.
-          enabled: true
-
-          # Paths that should be crawled and fetched. Glob based paths.
-          paths:
-            - C:\logstash\logs\*
-            #- c:\programdata\elasticsearch\logs\*
-3. Now run below command in command prompt to start Filebeat
-		
-		.filebeat.exe -c filebeat.yml
 
 ## Start with ELK
 
@@ -94,3 +101,6 @@
 
         http://localhost:9200/_cat/indices?v
     ![Elasticsearch Index](https://github.com/aman7797/spring-boot-ELK/blob/master/img/Elasticsearch-index.png)
+  
+4. Now you can check logs in Kibana
+  ![Kibana Logs](https://github.com/aman7797/spring-boot-ELK/blob/master/img/kibana_logs.png)
